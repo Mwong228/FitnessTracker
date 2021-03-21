@@ -124,6 +124,20 @@ let workoutSeed = [
   }
 ];
 
+// var done = 0;
+// for (var i=0; i < workoutSeed.length; i++){
+//   workoutSeed[i].save(function(err, result){
+//     done++;
+//     if (done === workoutSeed.length){
+//       exit();
+//     }
+//   })
+// }
+
+// function exit(){
+//   mongoose.disconnect
+// }
+
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then(data => {
