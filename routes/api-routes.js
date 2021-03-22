@@ -11,9 +11,7 @@ router.get("/api/workouts", (req, res) => {
     .catch(err => res.json(err));
 })
 
-router.put("/api/workouts/:id", ({ body, params }, res) => {
-    console.log(params.id);
-    console.log(body);
+router.put("/api/workouts/:id", (req, res) => {
     Workout.findByIdAndUpdate(
         params.id,
         { $push: {exercises: body} },
